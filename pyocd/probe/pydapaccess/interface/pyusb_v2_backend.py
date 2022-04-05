@@ -218,7 +218,7 @@ class PyUSBv2(Interface):
 
         self.read_sem.release()
 
-        self.ep_out.write(data)
+        self.ep_out.write(data, 10 * 1000)
 
     def read(self, timeout=Interface.DEFAULT_READ_TIMEOUT):
         """@brief Read data on the IN endpoint."""
